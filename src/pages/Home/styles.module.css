@@ -1,0 +1,33 @@
+.background {
+  background-image: url('./sky.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  min-height: 100vh;
+  min-width: 100vw;
+}
+ 
+.timeCityToday{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    left: 20px;
+}
+.timeCityToday h1{
+    color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 3.25rem;
+    letter-spacing: 0.14em;
+}
+
+.timeCityToday input{
+    margin-top: 20px;
+}
+
