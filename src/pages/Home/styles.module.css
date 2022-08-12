@@ -1,33 +1,72 @@
-.background {
-  background-image: url('./sky.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-
+.container {
   min-height: 100vh;
-  min-width: 100vw;
-}
- 
-.timeCityToday{
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: absolute;
-    left: 20px;
-}
-.timeCityToday h1{
-    color: white;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 2rem;
-    line-height: 3.25rem;
-    letter-spacing: 0.14em;
+  width: 100%;
 }
 
-.timeCityToday input{
-    margin-top: 20px;
+.header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  margin: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
+.switcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+}
+
+.content {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 20px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 2.625rem;
+
+  line-height: 52px;
+  letter-spacing: 0.14em;
+  text-align: center;
+}
+
+.search {
+  margin-top: 20px;
+
+  width: 100%;
+  max-width: 710px;
+  height: 50px;
+
+  padding: 13px 15px;
+
+  font-weight: 400;
+  font-size: 1.25rem;
+
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.77);
+  color: #6AA2D1;
+
+  outline: none;
+  border: 0;
+
+  box-shadow: 2px 3px 13px -8px #000000;
+}
+
+.search::placeholder {
+  color: #6AA2D1;
+}

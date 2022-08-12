@@ -1,5 +1,11 @@
-import { Home } from './pages/Home';
+import { BrowserRouter } from 'react-router-dom'
 
-export function App(){
-   return <Home />
+import { Router } from './Router'
+
+export function App() {
+  return (
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
+  )
 }
