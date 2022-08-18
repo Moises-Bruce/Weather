@@ -2,11 +2,13 @@ import { useState, KeyboardEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { TemperatureSwitch } from '../../components/TemperatureSwitch'
+import { GeocoderAutocomplete, CityGeocoder } from '../../components/GeocoderAutocomplete'
 
 import styles from './styles.module.css'
 
 export function Home() {
   const [checkedTemperature, setCheckedTemperature] = useState<'F' | 'C'>('C')
+  const [citySelected, setCitySelected] = useState<CityGeocoder>({} as CityGeocoder)
 
   const navigate = useNavigate()
 
@@ -14,10 +16,8 @@ export function Home() {
     setCheckedTemperature(checked ? 'C' : 'F')
   }
 
-  function handleSubmitSearch(event: KeyboardEvent<HTMLInputElement>) {
-    if(event.key === 'Enter') {
-      navigate('weather')
-    }
+  function handleSelectedCity(city: CityGeocoder) {
+    console.log(city)
   }
 
   return (
@@ -35,11 +35,9 @@ export function Home() {
 
       <main className={styles.content}>
         <h1 className={styles.title}>Como está o tempo hoje?</h1>
-        <input
-          className={styles.search}
-          type="text"
-          placeholder="Digite o nome da cidade"
-          onKeyDown={handleSubmitSearch}
+
+        <GeocoderAutocomplete
+          onSelectedCity={handleSelectedCity}
         />
       </main>
     </div>
