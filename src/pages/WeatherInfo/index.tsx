@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 
 import { TemperatureSwitch } from '../../components/TemperatureSwitch'
 import { BackButton } from '../../components/BackButton'
@@ -7,14 +7,35 @@ import { BackButton } from '../../components/BackButton'
 import cloud from '../../assets/cloud.svg'
 import styles from './styles.module.css'
 
+type ParamsRoute = {
+  lon: string;
+  lat: string;
+  temperature: 'F' | 'C';
+}
+
+const API_KEY = '1447b5a6a99dd5f2157fe98e75ddaccb'
+
 export function WeatherInfo() {
   const [checkedTemperature, setCheckedTemperature] = useState<'F' | 'C'>('C');
 
   const navigate = useNavigate()
+  const { lon, lat, temperature } = useParams<ParamsRoute>()
 
   function handleChangeTypeTemperature(checked: boolean) {
     setCheckedTemperature(checked ? 'C' : 'F')
   }
+
+  async function requestWeatherInformation() {
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=pt_br&appid=${API_KEY}`)
+    const data = await response.json()
+
+    console.log(data)
+  }
+
+  useEffect(() => {
+    setCheckedTemperature(temperature || 'C')
+    requestWeatherInformation()
+  }, [])
 
   return (
     <div className={styles.container}>

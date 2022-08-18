@@ -7,7 +7,7 @@ export function Router() {
   return (
     <Routes>
       <Route path='/' element={<Home/>} />
-      <Route path='/weather' element={<WeatherInfo />} />
+      <Route path='/weather/:lon/:lat/:temperature' element={<WeatherInfo />} />
     </Routes>
   )
 }

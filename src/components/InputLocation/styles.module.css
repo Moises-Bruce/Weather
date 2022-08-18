@@ -1,0 +1,62 @@
+
+.areaInput{
+  width: 100%;
+  max-width: 710px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.input{
+  margin-top: 20px;
+
+  width: 100%;
+  max-width: 710px;
+  height: 50px;
+
+  padding: 13px 15px;
+
+  font-weight: 400;
+  font-size: 1.25rem;
+
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.77);
+  color: #6AA2D1;
+
+  outline: none;
+  border: 0;
+
+  box-shadow: 0px 4px 4px rgba(106, 162, 209, 0.8);
+
+  caret-color: #D2B3C1;
+}
+
+.optionContainer {
+  width: 100%;
+
+  border-radius: 10px;
+  list-style-type: none;
+
+  margin-top: 1.2px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.77);
+}
+
+.option {
+  font-size: 1.25rem;
+  line-height: 24px;
+
+  color: #6AA2D1;
+
+  cursor: pointer;
+}
+
+.option:hover {
+  color: #D2B3C1;
+}
+
+.option:not(:first-child) {
+  margin-top: 15px;
+}
