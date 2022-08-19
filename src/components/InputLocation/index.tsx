@@ -86,7 +86,7 @@ export function InputLocation({
                   className={styles.option}
                   onClick={() => handleSubmitByPlace(place)}
                 >
-                  {place.city} - {place.state}
+                  {place.city} - {place.state} ({place.country})
                 </li>
               ))
             }

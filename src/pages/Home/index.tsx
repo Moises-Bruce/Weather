@@ -16,7 +16,7 @@ export function Home() {
   }
 
   function handleSubmit(location: Place) {
-    navigate(`weather/${location.lon}/${location.lat}/${checkedTemperature}`)
+    navigate(`weather/${location.city}/${location.lon}/${location.lat}/${checkedTemperature}`)
   }
 
   return (
